@@ -8,9 +8,10 @@ spec:
     port: 6443
     k0sApiPort: 9443
     sans:
-    {% for ipv4_address in ansible_all_ipv4_addresses %}
-      - {{ ipv4_address }}
-    {% endfor %}
+{% for ipv4_address in ansible_all_ipv4_addresses %}
+    - {{ ipv4_address }}
+{% endfor %}
+    - 127.0.0.1
   storage:
     type: etcd
     etcd:
