@@ -7,6 +7,8 @@ spec:
     address: {{ ansible_host }}
     port: 6443
     k0sApiPort: 9443
+    extraArgs:
+      bind-address: {{ ansible_host }}
     sans:
 {% for ipv4_address in ansible_all_ipv4_addresses %}
     - {{ ipv4_address }}
